@@ -5,9 +5,9 @@ import java.util.function.Predicate;
 
 public class RangeCriteria<T> {
     public final List<T> range;
-    public final Predicate<T> criteria;
+    public final Predicate<? super T> criteria;
 
-    public RangeCriteria(List<T> range, Predicate<T> criteria) {
+    public RangeCriteria(List<T> range, Predicate<? super T> criteria) {
         this.range = range;
         this.criteria = criteria;
     }
