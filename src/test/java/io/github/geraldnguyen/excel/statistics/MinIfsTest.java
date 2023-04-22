@@ -1,14 +1,13 @@
 package io.github.geraldnguyen.excel.statistics;
 
-import io.github.geraldnguyen.excel.statistics.MinIfs;
-import io.github.geraldnguyen.excel.statistics.RangeCriteria;
+import io.github.geraldnguyen.excel.RangeCriteria;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static io.github.geraldnguyen.Predicates.greaterThan;
-import static io.github.geraldnguyen.Predicates.isEqual;
+import static io.github.geraldnguyen.excel.Predicates.greaterThan;
+import static io.github.geraldnguyen.excel.Predicates.isEqual;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class MinIfsTest {

@@ -1,4 +1,4 @@
-package io.github.geraldnguyen.excel.statistics;
+package io.github.geraldnguyen.excel;
 
 import java.util.List;
 import java.util.function.Predicate;

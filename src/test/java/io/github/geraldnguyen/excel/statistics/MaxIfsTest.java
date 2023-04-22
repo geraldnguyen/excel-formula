@@ -1,13 +1,12 @@
 package io.github.geraldnguyen.excel.statistics;
 
-import io.github.geraldnguyen.excel.statistics.MaxIfs;
-import io.github.geraldnguyen.excel.statistics.RangeCriteria;
+import io.github.geraldnguyen.excel.RangeCriteria;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static io.github.geraldnguyen.Predicates.*;
+import static io.github.geraldnguyen.excel.Predicates.*;
 
 class MaxIfsTest {
     // against https://support.microsoft.com/en-us/office/maxifs-function-dfd611e6-da2c-488a-919b-9b6376b28883

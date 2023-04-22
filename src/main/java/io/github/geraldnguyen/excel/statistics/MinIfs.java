@@ -1,10 +1,9 @@
 package io.github.geraldnguyen.excel.statistics;
 
-import java.util.Arrays;
+import io.github.geraldnguyen.excel.BaseIfs;
+import io.github.geraldnguyen.excel.RangeCriteria;
+
 import java.util.List;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 // https://support.microsoft.com/en-us/office/minifs-function-6ca1ddaa-079b-4e74-80cc-72eef32e6599
 public class MinIfs extends BaseIfs {
