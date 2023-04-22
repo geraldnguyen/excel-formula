@@ -1,12 +1,7 @@
-package io.github.geraldnguyen.excel.statistics.maxifs;
-
-import lombok.extern.java.Log;
-import lombok.extern.log4j.Log4j2;
-import lombok.extern.slf4j.Slf4j;
+package io.github.geraldnguyen.excel.statistics;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;

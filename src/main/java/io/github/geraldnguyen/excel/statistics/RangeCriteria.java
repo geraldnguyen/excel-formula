@@ -1,4 +1,4 @@
-package io.github.geraldnguyen.excel.statistics.maxifs;
+package io.github.geraldnguyen.excel.statistics;
 
 import java.util.List;
 import java.util.function.Predicate;
