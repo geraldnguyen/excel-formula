@@ -18,12 +18,12 @@ class SumIfsTest {
                 "Bananas", "Bananas", "Carrots", "Carrots");
         var salespersons = List.of("Tom", "Sarah", "Tom", "Sarah", "Tom", "Sarah", "Tom", "Sarah");
 
-        assertEquals(20, (new SumIfs()).sumIfs(quantities,
+        assertEquals(BigDecimal.valueOf(20), (new SumIfs()).sumIfs(quantities,
                 new RangeCriteria<>(products, startWith("A")),
                 new RangeCriteria<>(salespersons, isEqual("Tom"))
         ));
 
-        assertEquals(30, (new SumIfs()).sumIfs(quantities,
+        assertEquals(BigDecimal.valueOf(30), (new SumIfs()).sumIfs(quantities,
                 new RangeCriteria<>(products, notEqual("Bananas")),
                 new RangeCriteria<>(salespersons, isEqual("Tom"))
         ));
@@ -37,7 +37,7 @@ class SumIfsTest {
                 "Bananas", "Bananas", "Carrots", "Carrots");
         var salespersons = List.of("Tom", "Sarah", "Tom", "Sarah", "Tom", "Sarah", "Tom", "Sarah");
 
-        assertEquals(20L, (new SumIfs()).sumIfs(quantities,
+        assertEquals(BigDecimal.valueOf(20L), (new SumIfs()).sumIfs(quantities,
                 new RangeCriteria<>(products, startWith("A")),
                 new RangeCriteria<>(salespersons, isEqual("Tom"))
         ));
@@ -50,7 +50,7 @@ class SumIfsTest {
                 "Bananas", "Bananas", "Carrots", "Carrots");
         var salespersons = List.of("Tom", "Sarah", "Tom", "Sarah", "Tom", "Sarah", "Tom", "Sarah");
 
-        assertEquals(20.4, (new SumIfs()).sumIfs(quantities,
+        assertEquals(BigDecimal.valueOf(20.4), (new SumIfs()).sumIfs(quantities,
                 new RangeCriteria<>(products, startWith("A")),
                 new RangeCriteria<>(salespersons, isEqual("Tom"))
         ));

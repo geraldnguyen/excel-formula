@@ -8,29 +8,26 @@ import java.util.List;
 
 // https://support.microsoft.com/en-us/office/sumifs-function-c9e748f5-7ea7-455d-9406-611cebce642b
 public class SumIfs extends BaseIfs {
-    protected <T extends Number> T sumIfs(List<T> range, RangeCriteria<?>... rangeCriteria) {
+    public  <T extends Number> BigDecimal sumIfs(List<T> range, RangeCriteria<?>... rangeCriteria) {
         var elems = ifs(range, rangeCriteria);
-        return elems.stream().reduce(SumIfs::sum).orElse(null);
+        return elems.stream()
+                .reduce(BigDecimal.ZERO, SumIfs::sum, BigDecimal::add);
     }
 
-    public static <T extends Number> T sum(T n1, T n2) {
-        if (n1 instanceof Integer) {
-            return (T) Integer.valueOf(Integer.sum(n1.intValue(), n2.intValue()));
+    public static <T extends Number> BigDecimal sum(BigDecimal result, T n) {
+        if (n instanceof Integer) {
+            return result.add(new BigDecimal((Integer) n));
         }
-        if (n1 instanceof Long) {
-            return (T) Long.valueOf(Long.sum(n1.longValue(), n2.longValue()));
+        if (n instanceof Long) {
+            return result.add(new BigDecimal((Long) n));
         }
-        if (n1 instanceof Double) {
-            return (T) Double.valueOf(Double.sum(n1.doubleValue(), n2.doubleValue()));
+        if (n instanceof Double) {
+            return result.add(BigDecimal.valueOf((Double) n));
         }
-        if (n1 instanceof Double) {
-            return (T) Double.valueOf(Double.sum(n1.doubleValue(), n2.doubleValue()));
-        }
-        if (n1 instanceof BigDecimal) {
-            return (T) ((BigDecimal) n1).add((BigDecimal) n2);
+        if (n instanceof BigDecimal) {
+            return result.add((BigDecimal) n);
         }
 
-        throw new IllegalArgumentException("Type not supported: " + n1.getClass());
+        throw new IllegalArgumentException("Type not supported: " + n.getClass());
     }
-
 }
