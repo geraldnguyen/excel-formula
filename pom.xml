@@ -6,7 +6,7 @@
 
     <groupId>io.github.geraldnguyen</groupId>
     <artifactId>excel-formula</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>${project.groupId}:${project.artifactId}</name>
     <description>Implementation of popular excel formula in Java</description>
     <url>https://github.com/geraldnguyen/excel-formula</url>
