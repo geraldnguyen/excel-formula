@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public abstract class BaseIfs {
+    // Step 1 + Step 2
     protected <T> List<T> ifs(List<T> range, RangeCriteria<?>... rangeCriteria) {
         var size = range.size();
         for (var rc : rangeCriteria) {
@@ -17,12 +18,17 @@ public abstract class BaseIfs {
             }
         }
 
+        // Step 1 + Step 2
         var finalist = ifs(rangeCriteria);
 
+        // Step 3
         return finalist.stream().map(range::get).collect(Collectors.toList());
     }
 
+    // Step 1 + Step 2 + Step 3 as an overload
     protected <T> Set<Integer> ifs(RangeCriteria<?>... rangeCriteria) {
+        // Step 1: for each range/criteria pair, apply the criteria to the
+        // provided range to find a set of eligible indices
         var eligibles = Arrays.stream(rangeCriteria).map(rc -> {
             var list = (List<Object>) rc.range;
             var criteria = (Predicate<Object>) rc.criteria;
@@ -32,6 +38,7 @@ public abstract class BaseIfs {
                     .collect(Collectors.toSet());
         }).collect(Collectors.toList());
 
+        // Step 2: find the intersection of above sets
         return eligibles.stream().reduce(null, (result, next) -> {
             if (result == null) {
                 return next;
