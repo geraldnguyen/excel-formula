@@ -39,4 +39,16 @@ class IfErrorTest {
         // expected NPE but caught RuntimeException
         assertThrows(RuntimeException.class, () -> (new IfError()).ifError(firstValueFn, secondValueFn, NullPointerException.class) );
     }
+
+    @Test
+    void supportNumericReturnTypes() {
+        // implicitly typed
+        assertEquals(1.0, (new IfError()).ifError(() -> 1.0, () -> 2) );
+
+        // explicitly typed
+        Supplier<Number> firstValueFn = () -> 1.0;
+        Supplier<Number> secondValueFn = () -> 2;
+        assertEquals(1.0, (new IfError()).ifError(firstValueFn, secondValueFn) );
+
+    }
 }
